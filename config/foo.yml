@@ -1,0 +1,14 @@
+# separate configuration read by config_for in config/environment.rb
+# values will be available at Rails.configuration.foo[]
+
+default: &default
+  foo: "This is the foo"
+
+development:
+  <<: *default
+  bar: dev
+
+test:
+  <<: *default
+  bar: test
+

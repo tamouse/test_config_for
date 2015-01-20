@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ###
+  # This reads in the extra configuration file at `config/blah.yml`
+  # and stores the values from the `development:` section in
+  # Rails.configuration.bar[]
+  ###
+  config.bar = config_for(:blah).deep_symbolize_keys
 end
